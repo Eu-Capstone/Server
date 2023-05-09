@@ -14,10 +14,6 @@ app.use(cookieParser());
 app.use(morgan("combined"));
 app.use(helmet());
 
-app.use("/", (req, res) => {
-  res.send("<h1>EU CAPSTONE API 싸개</h1>");
-});
-
 app.use(
   cors({
     origin: "*",

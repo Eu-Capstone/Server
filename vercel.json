@@ -4,10 +4,6 @@
     {
       "src": "/api/mbti",
       "dest": "/api/mbti.js"
-    },
-    {
-      "src": "/",
-      "dest": "app.js"
     }
   ],
   "builds": [
