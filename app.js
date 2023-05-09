@@ -5,6 +5,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import { default as MBTIRouter } from "./router/mbti.js";
 import { connectDB } from "./db/connect.js";
+import serverless from "serverless-http";
 
 // import postRouter from "./router/tldr.js";
 const app = express();
@@ -13,6 +14,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("combined"));
 app.use(helmet());
+
+app.use("/", (req, res) => {
+  res.send("<h1>EU CAPSTONE API 싸개</h1>");
+});
 
 app.use(
   cors({
@@ -30,4 +35,4 @@ app.use("/api/mbti", MBTIRouter);
 //   res.sendStatus(404);
 // });
 
-app.listen(8080);
+module.exports.handler = serverless(app);
