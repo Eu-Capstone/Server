@@ -25,10 +25,7 @@ app.use(
 
 connectDB();
 
-app.get("/", (req, res) => {
-  const filePath = path.resolve("./public/index.html");
-  res.sendFile(filePath);
-});
+app.use("/", (req, res) => res.status(200).json({ hanwoosek: "api ssagae" }));
 
 app.use("/api/mbti", MBTIRouter);
 
