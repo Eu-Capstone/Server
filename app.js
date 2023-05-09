@@ -6,6 +6,7 @@ import helmet from "helmet";
 import { default as MBTIRouter } from "./router/mbti.js";
 import { connectDB } from "./db/connect.js";
 import serverless from "serverless-http";
+import path from "path";
 
 const app = express();
 
@@ -23,6 +24,11 @@ app.use(
 );
 
 connectDB();
+
+app.get("/", (req, res) => {
+  const filePath = path.resolve("./public/index.html");
+  res.sendFile(filePath);
+});
 
 app.use("/api/mbti", MBTIRouter);
 
