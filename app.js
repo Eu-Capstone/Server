@@ -26,7 +26,7 @@ app.use(
   })
 );
 
-await connectDB();
+connectDB();
 
 app.use("/api/mbti", MBTIRouter);
 
