@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/api/mbti",
-      "dest": "/api/mbti.js"
+      "dest": "/router/mbti.js"
     },
     {
       "src": "/",
