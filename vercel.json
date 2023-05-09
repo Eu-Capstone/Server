@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/mbti",
+      "dest": "/api/mbti.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "builds": {
+    "api/mbti.js": {
+      "src": "app.js",
+      "use": "@vercel/node@1.11.0"
+    }
+  }
+}

@@ -7,7 +7,6 @@ import { default as MBTIRouter } from "./router/mbti.js";
 import { connectDB } from "./db/connect.js";
 import serverless from "serverless-http";
 
-// import postRouter from "./router/tldr.js";
 const app = express();
 
 app.use(express.json());
@@ -21,18 +20,14 @@ app.use("/", (req, res) => {
 
 app.use(
   cors({
-    origin: "*", // 허용할 origin
-    optionsSuccessStatus: 200, // 기본 요청 success code
-    credentials: true, // reqeust credential이 포함되있을 경우 response에서 보여줄지 아닐지
+    origin: "*",
+    optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 
 await connectDB();
 
 app.use("/api/mbti", MBTIRouter);
-
-// app.use("/posts", (req, res) => {
-//   res.sendStatus(404);
-// });
 
 module.exports.handler = serverless(app);
