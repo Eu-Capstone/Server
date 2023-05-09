@@ -31,4 +31,5 @@ connectDB();
 app.use("/api/mbti", MBTIRouter);
 
 const handler = serverless(app);
+
 export { handler };
