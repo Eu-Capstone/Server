@@ -10,10 +10,10 @@
       "dest": "/"
     }
   ],
-  "builds": {
-    "api/mbti.js": {
+  "builds": [
+    {
       "src": "app.js",
       "use": "@vercel/node@1.11.0"
     }
-  }
+  ]
 }

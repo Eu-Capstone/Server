@@ -30,4 +30,5 @@ await connectDB();
 
 app.use("/api/mbti", MBTIRouter);
 
+module.exports = app;
 module.exports.handler = serverless(app);
