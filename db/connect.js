@@ -6,8 +6,6 @@ const connectDB = () => {
     mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
     });
   } catch (err) {
     throw new Error(err.message);

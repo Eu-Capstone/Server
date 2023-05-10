@@ -54,11 +54,9 @@ const getMBTICount = async (req, res) => {
 
 const getMBTIResult = async (req, res) => {
   try {
-    // const mbtis = await MBTI.find();
-    // const userCount = await COUNT.findOne();
-
-    // res.status(200).json({ mbtis, userCount });
-    res.status(200).json({ ho: "guys" });
+    const mbtis = await MBTI.find();
+    const userCount = await COUNT.findOne();
+    res.status(200).json({ mbtis, userCount });
   } catch (error) {
     throw new Error("Failed to get MBTI list");
   }
