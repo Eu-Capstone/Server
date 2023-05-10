@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -11,4 +11,4 @@ const userSchema = new Schema({
 
 const COUNT = mongoose.model("count", userSchema);
 
-export default COUNT;
+module.exports = COUNT;

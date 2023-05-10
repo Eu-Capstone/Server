@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
@@ -35,4 +35,4 @@ const mbtiSchema = new Schema({
 
 const MBTI = mongoose.model("mbti", mbtiSchema);
 
-export default MBTI;
+module.exports = MBTI;

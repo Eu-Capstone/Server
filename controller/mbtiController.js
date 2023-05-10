@@ -1,5 +1,5 @@
-import MBTI from "../model/MBTI.js";
-import COUNT from "../model/user.js";
+const MBTI = require("../model/MBTI.js");
+const COUNT = require("../model/user.js");
 
 const mbtiList = [
   "ISTJ",
@@ -63,4 +63,4 @@ const getMBTIResult = async (req, res) => {
   }
 };
 
-export { incrementMBTICount, getMBTICount, getMBTIResult };
+module.exports = { incrementMBTICount, getMBTICount, getMBTIResult };

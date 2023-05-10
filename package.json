@@ -30,6 +30,5 @@
     "mongoose": "^7.1.0",
     "morgan": "^1.10.0",
     "serverless-http": "^3.2.0"
-  },
-  "type": "module"
+  }
 }

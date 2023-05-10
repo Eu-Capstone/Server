@@ -1,11 +1,10 @@
-import express from "express";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import morgan from "morgan";
-import helmet from "helmet";
-import { default as MBTIRouter } from "./api/mbti.js";
-import { connectDB } from "./db/connect.js";
-import serverless from "serverless-http";
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const MBTIRouter = require("./api/mbti.js");
+const { connectDB } = require("./db/connect.js");
 
 const app = express();
 
@@ -28,4 +27,4 @@ app.use("/api/mbti", MBTIRouter);
 
 app.use("/", (req, res) => res.status(202).json({ wooseok: "api ssagae" }));
 
-export default app;
+module.exports = app;
