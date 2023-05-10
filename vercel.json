@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "functions": { "api/**/*.js": { "runtime": "@now/node" } },
+  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
   "routes": [
-    { "src": "/api/mbti/result", "dest": "api/mbti.js" },
-    { "src": "/api/mbti/count", "dest": "api/mbti.js" },
-    { "src": "/(.*)", "dest": "api/mbti.js" }
+    { "src": "/api/.*", "dest": "app.js" },
+    { "src": "/(.*)", "dest": "app.js" }
   ]
 }
