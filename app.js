@@ -24,10 +24,8 @@ app.use(
 
 connectDB();
 
-app.use("/", (req, res) => res.status(200).json({ hanwoosek: "api ssagae" }));
-
 app.use("/api/mbti", MBTIRouter);
 
-const handler = serverless(app);
+app.use("/", (req, res) => res.status(202).json({ wooseok: "api ssagae" }));
 
-export { handler };
+export default app;

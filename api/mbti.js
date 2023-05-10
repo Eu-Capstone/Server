@@ -4,6 +4,7 @@ import {
   incrementMBTICount,
   getMBTIResult,
 } from "../controller/mbtiController.js";
+import { connectDB, disconnectDB } from "../db/connect.js";
 
 const router = express.Router();
 
