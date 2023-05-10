@@ -26,7 +26,7 @@ const incrementMBTICount = async (req, res) => {
     if (!mbtiList.includes(mbti)) {
       throw new Error("Invalid mbti value");
     }
-    const result = await MBTI.findOneAndUpdate(
+    await MBTI.findOneAndUpdate(
       { mbti },
       { $inc: { count: 1 } },
       { upsert: true }
@@ -37,7 +37,7 @@ const incrementMBTICount = async (req, res) => {
       { $inc: { userCount: 1 } },
       { upsert: true, new: true }
     );
-    res.json(result);
+    res.status(200).json({ success: "성공적으로 반영되었습니다" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
