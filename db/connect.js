@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const connectDB = () => {
+const connectDB = async () => {
   const uri = `mongodb+srv://vercel-admin-user:fq1GXFlR15kSyUA0@capstone.00k8dii.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-  mongoose
+  await mongoose
     .connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
