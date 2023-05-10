@@ -8,8 +8,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/result", getMBTIResult);
-router.post("/result", incrementMBTICount);
-router.get("/count", getMBTICount);
+router.get("/api/mbti/result", getMBTIResult);
+router.post("/api/mbti/result", incrementMBTICount);
+router.get("/api/mbti/count", getMBTICount);
 
 module.exports = router;

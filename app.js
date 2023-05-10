@@ -8,6 +8,8 @@ const { connectDB } = require("./db/connect.js");
 
 const app = express();
 
+connectDB();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("combined"));
@@ -20,8 +22,6 @@ app.use(
     credentials: true,
   })
 );
-
-connectDB();
 
 app.use("/api/mbti", MBTIRouter);
 
