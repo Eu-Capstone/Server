@@ -6,9 +6,9 @@ const helmet = require("helmet");
 const mbtiRouter = require("./api/mbti.js");
 const { connectDB } = require("./db/connect.js");
 
-const app = express();
-
 connectDB();
+
+const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
