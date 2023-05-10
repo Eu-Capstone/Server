@@ -22,6 +22,7 @@ app.use(
     credentials: true,
   })
 );
+app.use("/", (req, res) => res.status(200).json({ success: "!!" }));
 
 app.use("/api/mbti", MBTIRouter);
 
