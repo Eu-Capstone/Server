@@ -3,7 +3,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const helmet = require("helmet");
-const MBTIRouter = require("./api/mbti.js");
+const MBTIRouter = require("./router/mbti.js");
 const { connectDB } = require("./db/connect.js");
 
 const app = express();
