@@ -53,6 +53,7 @@ const getMBTICount = async (req, res) => {
 };
 
 const getMBTIResult = async (req, res) => {
+  console.log("hi");
   try {
     const mbtis = await MBTI.find();
     const userCount = await COUNT.findOne();
