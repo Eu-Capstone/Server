@@ -3,7 +3,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const helmet = require("helmet");
-const MBTIRouter = require("./api/mbti.js");
+const router = require("./api/mbti.js");
 const { connectDB } = require("./db/connect.js");
 
 const app = express();
@@ -22,8 +22,9 @@ app.use(
     credentials: true,
   })
 );
-app.use("/", (req, res) => res.status(200).json({ success: "!!" }));
 
-app.use("/api/mbti", MBTIRouter);
+app.use("/api/mbti", router);
+
+app.use("/", (req, res) => res.status(200).json({ success: "!!" }));
 
 module.exports = app;
