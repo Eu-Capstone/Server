@@ -26,4 +26,4 @@ app.use("/", (req, res) => res.status(200).json({ success: "!!" }));
 
 app.use("/api/mbti", MBTIRouter);
 
-module.exports = app;
+app.listen(8080);
