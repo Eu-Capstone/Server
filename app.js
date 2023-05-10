@@ -25,6 +25,4 @@ connectDB();
 
 app.use("/api/mbti", MBTIRouter);
 
-app.use("/", (req, res) => res.status(202).json({ wooseok: "api ssagae" }));
-
 module.exports = app;
