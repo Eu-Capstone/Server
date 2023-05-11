@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const mbtiRouter = require("./api/mbti.js");
-const { connectDB } = require("./db/connect.js");
+const { connectDB, disconnectDB } = require("./db/connect.js");
 
 connectDB();
 
@@ -28,6 +28,10 @@ app.use("/api/mbti", mbtiRouter);
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: "서버 오류" }); // 클라이언트에게 에러 응답 전송
+});
+
+process.on("SIGINT", () => {
+  disconnectDB();
 });
 
 module.exports = app;
