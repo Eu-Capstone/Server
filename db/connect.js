@@ -5,14 +5,12 @@ const connectDB = async () => {
   const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,
   };
 
   try {
-    const connection = await mongoose.createConnection(uri, options);
-    return connection;
+    await mongoose.connect(uri, options);
   } catch (error) {
-    throw error;
+    throw new Error(error.message);
   }
 };
 

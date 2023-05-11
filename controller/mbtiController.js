@@ -1,3 +1,4 @@
+const { connectDB } = require("../db/connect.js");
 const MBTI = require("../model/MBTI.js");
 const COUNT = require("../model/user.js");
 
@@ -26,6 +27,7 @@ const incrementMBTICount = async (req, res) => {
     if (!mbtiList.includes(mbti)) {
       throw new Error("Invalid mbti value");
     }
+    connectDB();
     await MBTI.findOneAndUpdate(
       { mbti },
       { $inc: { count: 1 } },
@@ -45,6 +47,7 @@ const incrementMBTICount = async (req, res) => {
 
 const getMBTICount = async (req, res) => {
   try {
+    connectDB();
     const count = await COUNT.findOne();
     res.status(200).json(count);
   } catch (error) {
@@ -54,6 +57,7 @@ const getMBTICount = async (req, res) => {
 
 const getMBTIResult = async (req, res) => {
   try {
+    connectDB();
     const mbtis = await MBTI.find();
     const userCount = await COUNT.findOne();
     res.status(200).json({ mbtis, userCount });
