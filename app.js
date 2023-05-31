@@ -27,4 +27,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "서버 오류" }); // 클라이언트에게 에러 응답 전송
 });
 
-module.exports = app;
+app.listen(3000);

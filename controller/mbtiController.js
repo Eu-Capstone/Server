@@ -2,24 +2,7 @@ const { connectDB } = require("../db/connect.js");
 const MBTI = require("../model/MBTI.js");
 const COUNT = require("../model/user.js");
 
-const mbtiList = [
-  "ISTJ",
-  "ISFJ",
-  "INFJ",
-  "INTJ",
-  "ISTP",
-  "ISFP",
-  "INFP",
-  "INTP",
-  "ESTP",
-  "ESFP",
-  "ENFP",
-  "ENTP",
-  "ESTJ",
-  "ESFJ",
-  "ENFJ",
-  "ENTJ",
-];
+const mbtiList = ["IFP", "IFJ", "ITP", "ITJ", "EFP", "EFJ", "ETP", "ETJ"];
 
 const incrementMBTICount = async (req, res) => {
   const { mbti } = req.body;
